@@ -13,27 +13,31 @@ public class Tarjeta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private Long id;
+    @Column(name = "id", nullable = false)
+    private int id;
 
-    @Column
+    @Column(name = "fraseAnverso", nullable = false)
     private String fraseAnverso;
 
-    @Column
+    @Column(name = "fraseReverso", nullable = false)
     private String fraseReverso;
 
-    @Column
+    @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "Mazo_id", nullable = false)
+    @JoinColumn(name = "mazo_id", nullable = false)
     private Mazo mazo;
 
-    public Long getId() {
+    public Tarjeta(){
+        
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

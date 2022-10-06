@@ -13,19 +13,24 @@ public class Mazo {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id", nullable = false)
+    private int id;
 
-    @Column
+    @Column(name = "nombre", nullable = false, length = 60)
     private String nombre;
 
-    @Column
+    @Column(name = "descripcion")
     private String descripcion;
 
-    public Long getId() {
+    public Mazo(){
+        
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
