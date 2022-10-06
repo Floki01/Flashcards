@@ -6,5 +6,5 @@ import com.flashcard.flashcards.model.Mazo;
 public interface IMazoService {
     public List<Mazo> listar();
     public int guardar(Mazo mazo);
-    public void delete(int id);
+    public void delete(Long id);
 }

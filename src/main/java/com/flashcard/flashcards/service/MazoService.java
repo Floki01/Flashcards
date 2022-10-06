@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.flashcard.flashcards.interfaceService.IMazoService;
 import com.flashcard.flashcards.model.Mazo;
-import com.flashcard.flashcards.interfaces.IMazo;
+import com.flashcard.flashcards.repository.IMazo;
 
 @Service
 public class MazoService implements IMazoService {
@@ -20,15 +20,16 @@ public class MazoService implements IMazoService {
         return 0;
     }
 
-    @Override
-    public void delete(int id) {
-        
-        
-    }
 
     @Override
     public List<Mazo> listar() {
         return (List<Mazo>)data.findAll();
+    }
+
+
+    @Override
+    public void delete(Long id) {
+        
     }
     
 }

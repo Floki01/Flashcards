@@ -21,6 +21,9 @@ public class MazoController {
     @GetMapping("/index")
     public String listar(Model model){
         List<Mazo> mazos = service.listar();
+        mazos.add(new Mazo("Hola","aqui")); //ejemplos
+        mazos.add(new Mazo("soy","quien"));
+        mazos.add(new Mazo("Matias Arias","quien"));
         model.addAttribute("mazos", mazos);
         return "index";
     }

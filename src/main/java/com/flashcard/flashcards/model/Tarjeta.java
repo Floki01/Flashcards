@@ -12,9 +12,9 @@ import javax.persistence.ManyToOne;
 public class Tarjeta {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private int id;
+    private long id;
 
     @Column(name = "fraseAnverso", nullable = false)
     private String fraseAnverso;
@@ -33,11 +33,11 @@ public class Tarjeta {
         
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
