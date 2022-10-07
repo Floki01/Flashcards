@@ -29,6 +29,10 @@ public class Mazo {
         this.descripcion = descripcion;
     }
 
+    public Mazo(){
+        
+    }
+
     public long getId() {
         return id;
     }

@@ -16,7 +16,8 @@ public class MazoService implements IMazoService {
     private IMazo data;
 
     @Override
-    public int guardar(Mazo mazo) {
+    public int guardar(Mazo m) {
+        Mazo mazo = data.save(m);
         return 0;
     }
 
