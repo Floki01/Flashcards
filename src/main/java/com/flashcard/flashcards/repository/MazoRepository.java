@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.flashcard.flashcards.model.Mazo;
 
 @Repository
-public interface IMazo extends JpaRepository<Mazo,Long>{
+public interface MazoRepository extends JpaRepository<Mazo,Long>{
     
 }
