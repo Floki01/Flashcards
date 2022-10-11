@@ -2,35 +2,32 @@ package com.flashcard.flashcards.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.flashcard.flashcards.interfaceService.IMazoService;
 import com.flashcard.flashcards.model.Mazo;
-import com.flashcard.flashcards.repository.IMazo;
+import com.flashcard.flashcards.repository.MazoRepository;
 
 @Service
-public class MazoService implements IMazoService {
+public class MazoService{
 
     @Autowired
-    private IMazo data;
+    private MazoRepository mazoRepository;
 
-    @Override
-    public int guardar(Mazo m) {
-        Mazo mazo = data.save(m);
-        return 0;
+    public List<Mazo> listAll(){
+        return mazoRepository.findAll();
     }
 
-
-    @Override
-    public List<Mazo> listar() {
-        return (List<Mazo>)data.findAll();
+    public void save(Mazo mazo){
+        mazoRepository.save(mazo);
     }
 
+    public void delete(Long id){
+        mazoRepository.deleteById(id);
+    }
 
-    @Override
-    public void delete(Long id) {
-        
+    public Mazo get(Long id){
+        return mazoRepository.findById(id).get();
     }
     
 }

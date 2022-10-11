@@ -21,28 +21,26 @@
         <div class="row">
           <div class="col-sm-8">
 
-            <!-- <tr th:each="mazo:${mazos}">
-              <td th:text="${mazo.nombre}"></td>
-            </tr> -->
-
             <ul class="list-group" th:each="mazo:${mazos}">
               <li class="list-group-item">
                 <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
                 <label class="form-check-label" for="firstRadio" th:text="${mazo.nombre}"></label>
+                <div class="row">
+                  <a th:href="@{/editar/}+${mazo.id}" class="btn btn-primary">editar</a>
+                  <a th:href="@{/eliminar/}+${mazo.id}" class="btn btn-danger">eliminar</a>
+                </div>
               </li>
             </ul>
-              
           </div>
+
           <div class="col-sm-4">
             <div class="container">
                 <div class="row">
                     <a th:href="@{/crear}" class="btn btn-primary">Crear mazo</a>
                 </div>
-                <div class="row">
-                    <button type="button" class="btn btn-secondary">Editar</button>
-                </div>
             </div>
           </div>
+
         </div>
     </div>
 
