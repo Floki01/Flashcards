@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-sm-8">
 
-            <ul class="list-group" th:each="mazo:${mazos}">
+            <!-- <ul class="list-group" th:each="mazo:${mazos}">
               <li class="list-group-item">
                 <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
                 <label class="form-check-label" for="firstRadio" th:text="${mazo.nombre}"></label>
@@ -30,7 +30,22 @@
                   <a th:href="@{/eliminar/}+${mazo.id}" class="btn btn-danger">eliminar</a>
                 </div>
               </li>
-            </ul>
+            </ul> -->
+
+            <ol class="list-group list-group-numbered" th:each="mazo:${mazos}">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto" th:text="${mazo.nombre}">
+                  <div class="fw-bold" th:text="${mazo.descripcion}"></div>
+                </div>
+                <span class="badge bg-primary rounded-pill">N° cartas</span><br>
+                <div>
+                  <a th:href="@{/tarjetas/}+${mazo.id}" class="btn btn-primary">tarjetas</a>
+                  <a th:href="@{/editar/}+${mazo.id}" class="btn btn-primary">editar</a>
+                  <a th:href="@{/eliminar/}+${mazo.id}" class="btn btn-danger">eliminar</a>
+                </div>
+              </li>
+            </ol>
+
           </div>
 
           <div class="col-sm-4">

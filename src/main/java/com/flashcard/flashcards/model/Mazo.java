@@ -1,11 +1,18 @@
 package com.flashcard.flashcards.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "mazo")
@@ -19,10 +26,12 @@ public class Mazo {
     @Column(name = "nombre", nullable = false, length = 60)
     private String nombre;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", length = 60)
     private String descripcion;
 
-    
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "mazo_id")
+    private List<Tarjeta> tarjetas = new ArrayList<>();
 
     public Mazo(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -32,6 +41,8 @@ public class Mazo {
     public Mazo(){
         
     }
+
+    
 
     public long getId() {
         return id;
@@ -55,6 +66,10 @@ public class Mazo {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public List<Tarjeta> getTarjetas() {
+        return tarjetas;
     }
 
     
