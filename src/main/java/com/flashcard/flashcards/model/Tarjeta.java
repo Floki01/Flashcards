@@ -7,8 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tarjeta")
 public class Tarjeta {
     
     @Id
@@ -25,7 +27,7 @@ public class Tarjeta {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "mazo_id", nullable = false)
     private Mazo mazo;
 
