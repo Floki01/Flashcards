@@ -1,11 +1,14 @@
 package com.flashcard.flashcards.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import net.bytebuddy.dynamic.TypeResolutionStrategy.Lazy;
 
 @Entity
 @Table(name = "mazo")
@@ -29,20 +33,12 @@ public class Mazo {
     @Column(name = "descripcion", length = 60)
     private String descripcion;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "mazo_id")
-    private List<Tarjeta> tarjetas = new ArrayList<>();
-
-    public Mazo(String nombre, String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
+    @OneToMany(mappedBy = "mazo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Tarjeta> tarjetas = new HashSet<>();
 
     public Mazo(){
         
     }
-
-    
 
     public long getId() {
         return id;
@@ -68,9 +64,11 @@ public class Mazo {
         this.descripcion = descripcion;
     }
 
-    public List<Tarjeta> getTarjetas() {
+    public Set<Tarjeta> getTarjetas() {
         return tarjetas;
     }
 
-    
+    public void setTarjetas(Set<Tarjeta> tarjetas) {
+        this.tarjetas = tarjetas;
+    }
 }

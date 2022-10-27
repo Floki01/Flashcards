@@ -2,6 +2,7 @@ package com.flashcard.flashcards.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,31 +10,45 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.core.sym.Name;
+
 @Entity
 @Table(name = "tarjeta")
 public class Tarjeta {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private long id;
 
-    @Column(name = "fraseAnverso", nullable = false)
+    @Column(name = "fraseAnverso")
     private String fraseAnverso;
 
-    @Column(name = "fraseReverso", nullable = false)
+    @Column(name = "fraseReverso")
     private String fraseReverso;
 
-    @Column(name = "descripcion", nullable = false)
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "mazo_id", nullable = false)
     private Mazo mazo;
-
+    
     public Tarjeta(){
         
     }
+
+    // public Tarjeta(String fraseAnverso, String fraseReverso, String descripcion) {
+    //     this.fraseAnverso = fraseAnverso;
+    //     this.fraseReverso = fraseReverso;
+    //     this.descripcion = descripcion;
+    // }
 
     public long getId() {
         return id;
@@ -67,6 +82,12 @@ public class Tarjeta {
         this.descripcion = descripcion;
     }
 
+    @Override
+    public String toString() {
+        return "Tarjeta [id=" + id + ", fraseAnverso=" + fraseAnverso + ", fraseReverso=" + fraseReverso
+                + ", descripcion=" + descripcion + ", mazo=" + mazo + "]";
+    }
+
     public Mazo getMazo() {
         return mazo;
     }
@@ -74,7 +95,4 @@ public class Tarjeta {
     public void setMazo(Mazo mazo) {
         this.mazo = mazo;
     }
-
-    
-
 }

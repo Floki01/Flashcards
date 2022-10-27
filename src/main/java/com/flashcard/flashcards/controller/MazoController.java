@@ -16,13 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.flashcard.flashcards.model.Mazo;
+import com.flashcard.flashcards.model.Tarjeta;
 import com.flashcard.flashcards.service.MazoService;
-
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-
 
 @Controller
 @RequestMapping
@@ -34,7 +32,6 @@ public class MazoController {
     @RequestMapping("/index")
     public String listar(Model model){
         List<Mazo> mazos = service.listAll();
-        mazos.add(new Mazo("Hola","aqui")); //ejemplo
         model.addAttribute("mazos", mazos);
         return "index";
     }
