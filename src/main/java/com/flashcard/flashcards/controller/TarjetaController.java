@@ -39,16 +39,14 @@ public class TarjetaController {
     @GetMapping(value = "/crearTarjeta/{id}")
     public String crearTarjeta(Model model, @PathVariable(name = "id") Long id){
         Mazo mazo = mazoService.get(id);
-        model.addAttribute("tarjeta",new Tarjeta());
         model.addAttribute("mazo",mazo);
+        model.addAttribute("tarjeta",new Tarjeta());
         return "crearTarjeta";
     }
 
-    @RequestMapping(value ="/guardarTarjeta/{id}",method = RequestMethod.POST)
-    public String guardar(@ModelAttribute("tarjeta") Tarjeta tarjeta, @PathVariable(name = "id") Long id){
-        
+    @RequestMapping(value ="/guardarTarjeta",method = RequestMethod.POST)
+    public String guardar(@ModelAttribute("tarjeta") Tarjeta tarjeta){
         tarjetaService.save(tarjeta);
-        
         return "redirect:/index";
     }
 

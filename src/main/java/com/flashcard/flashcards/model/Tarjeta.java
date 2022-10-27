@@ -44,12 +44,6 @@ public class Tarjeta {
         
     }
 
-    // public Tarjeta(String fraseAnverso, String fraseReverso, String descripcion) {
-    //     this.fraseAnverso = fraseAnverso;
-    //     this.fraseReverso = fraseReverso;
-    //     this.descripcion = descripcion;
-    // }
-
     public long getId() {
         return id;
     }
