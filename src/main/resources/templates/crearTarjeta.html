@@ -10,12 +10,13 @@
 
 <body>
 
-    <form th:action="@{/guardarTarjeta/}+${mazo.id}" th:object="${tarjeta}" method="post">
+    <form th:action="@{/guardarTarjeta}" th:object="${tarjeta}" method="post">
 
         <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label" th:text="${mazo}">frase Anverso</label>
-            <!-- <input type="text" class="form-control" id="formGroupExampleInput"  th:value = "${mazo.id}" th:field="*{mazo}"> -->
-            <select th:field="*{mazo}"><option th:value="${mazo.id}" th:text="${mazo.nombre}"></option></select>
+            <label for="formGroupExampleInput" class="form-label" th:text="${mazo}"></label>
+            <select th:field="*{mazo}">
+                <option th:value="${mazo.id}" th:text="${mazo.nombre}"></option>
+            </select>
         </div>
 
         <div class="mb-3">
