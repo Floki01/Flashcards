@@ -29,11 +29,11 @@ public class MazoController {
     @Autowired
     private MazoService service;
 
-    @RequestMapping("/index")
+    @RequestMapping("/mazo")
     public String listar(Model model){
         List<Mazo> mazos = service.listAll();
         model.addAttribute("mazos", mazos);
-        return "index";
+        return "mazo";
     }
 
     @GetMapping("/crear")
@@ -45,7 +45,7 @@ public class MazoController {
     @RequestMapping(value ="/guardar",method = RequestMethod.POST)
     public String guardar(@ModelAttribute("mazo") Mazo mazo){
         service.save(mazo);
-        return "redirect:/index";
+        return "redirect:/mazo";
     }
 
     @RequestMapping("/editar/{id}")
@@ -59,7 +59,7 @@ public class MazoController {
     @GetMapping(value = "/eliminar/{id}")
     public String eliminar(Model model, @PathVariable(name = "id") Long id){
         service.delete(id);
-        return "redirect:/index";
+        return "redirect:/mazo";
     }
     
 }
