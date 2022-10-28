@@ -1,62 +1,96 @@
 <!DOCTYPE html>
-<html xmlns:th = "http://www.thymeleaf.org">
-
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Mis mazos</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css">
+    <title>Pagina de Inicio</title>
 </head>
-
 <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            Mis Mazos
-          </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-
-            <ol class="list-group list-group-numbered" th:each="mazo:${mazos}">
-              <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto" th:text="${mazo.nombre}">
-                  <div class="fw-bold" th:text="${mazo.descripcion}"></div>
-                </div>
-                <span class="badge bg-primary rounded-pill">N° cartas</span><br>
-                <div>
-                  <a th:href="@{/tarjetas/}+${mazo.id}" class="btn btn-primary">tarjetas</a>
-                  <a th:href="@{/editar/}+${mazo.id}" class="btn btn-primary">editar</a>
-                  <a th:href="@{/eliminar/}+${mazo.id}" class="btn btn-danger">eliminar</a>
-                </div>
-              </li>
-            </ol>
-
-          </div>
-
-          <div class="col-sm-4">
-            <div class="container">
-                <div class="row">
-                    <a th:href="@{/crear}" class="btn btn-primary">Crear mazo</a>
-                </div>
-            </div>
-          </div>
-
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            Matias Arias y Claudio Saez
-          </div>
-        </div>
-    </div>
     
+
+    <div class="encabezado">
+
+        <div class="logo">
+            <img src="/src/main/resources/static/img/playlearn_flashcards_multi_rgb-600x125.png" alt="logo">
+            <a href=""></a>
+        </div>
+
+        <nav class="linksnav">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#mazos">Mazos</a>
+            <a th:href="@{/login}">Login</a> 
+            <a th:href="@{/registro}">Regristro</a>
+
+    </div>
+<a name="inicio" id="inicio"></a>
+<header class="content portada">
+    
+    <h2 class="title">Flashcard</h2>
+     
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+         Ipsam necessitatibus odio quisquam reprehenderit quas, 
+         obcaecati, harum hic molestiae sequi ipsa nihil id tempore explicabo 
+        libero vero quia asperiores similique dicta.
+    </p>
+
+    <div class="btn-home">
+        <a href="#" class="btn">Saber mas</a>
+        
+    </div>
+</header>
+<a href="nosotros" id="nosotros"></a>
+<section class="content nosotros">
+   
+    <h2 class="title">Nosotros</h2>
+   <br>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+        elit. Veritatis excepturi dolore, harum asperiores 
+        cupiditate officiis quia odit reiciendis quidem iure 
+        architecto laudantium 
+        nihil saepe pariatur vel labore molestias consectetur veniam?</p>
+    </div>
+
+</section>
+<a href="mazos"id="mazos"></a>
+<section class="content mazos">
+
+    <h2 class="title">Mazos - Tarjetas</h2>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Ut soluta similique 
+        quia reprehenderit eligendi aliquam. Sit 
+        odio impedit quibusdam. Velit corporis, 
+        optio debitis quidem ex ipsam rerum dolorem autem sequi.
+    </p>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="img mazo"><img src="/src/main/resources/static/img/imgmazo.png" alt="imagen_de_mazo"></i>
+            <h3>Mazo</h3>
+            <br>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+        
+        <div class="box">  
+            <i class="img tarjeta"><img src="/src/main/resources/static/img/1006772.png" alt="imagen_de_tarjeta"></i>
+            <h3>Tarjeta</h3>
+            <br>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+</div>
+
+    <a href="#" class="btn">Saber mas</a>
+
+</section>
+
+
+
+
 </body>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
