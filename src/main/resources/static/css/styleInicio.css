@@ -67,7 +67,7 @@ body{
 
 .portada{
     height: 80vh !important;
-    background: url(/src/main/resources/static/img/portada.png) no-repeat center;
+    background: url(/src/main/resources/static/img/Flashcards-for-language-learning-blog.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -78,7 +78,14 @@ body{
     font-size: 60px;
     font-weight: 600;
     text-transform: uppercase;
-    color: black;
+    color: rgb(41, 37, 37);
+}
+
+.p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: white;
+    padding: 0 100px;
 }
 
 /*Todos los parrafos de la pagina */
