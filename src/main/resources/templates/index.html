@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/src/main/resources/static/css/styleInicio.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/styleInicio.css" th:href="@{/css/styleInicio.css}">
     <title>Pagina de Inicio</title>
 </head>
 <body>
@@ -14,7 +16,7 @@
     <div class="encabezado">
 
         <div class="logo">
-            <img src="/src/main/resources/static/img/playlearn_flashcards_multi_rgb-600x125.png" alt="logo">
+            <img th:src="@{/img/playlearn_flashcards_multi_rgb-600x125.png}" alt="logo">
             <a href=""></a>
         </div>
 

@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @SpringBootApplication
 public class FlashcardsApplication {
 
-	//usar puerto 8082
+
 	public static void main(String[] args) {
 		SpringApplication.run(FlashcardsApplication.class, args);
 	}
