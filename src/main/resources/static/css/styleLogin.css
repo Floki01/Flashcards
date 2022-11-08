@@ -11,10 +11,12 @@
 body {
   text-align: center; /**se centran todos los textos de la pagina*/
   font-family: sans-serif; /**Tipografia*/
+  background: #6844e9; /*color del fondo*/
+  box-shadow: 20px 20px 60px #583ac6, -20px -20px 60px #784eff;
 }
 
 /*Login*/
-
+/*Buscar un color para el login*/
 .Contenedor {
   width: 320px;
   height: 440px;
@@ -27,23 +29,25 @@ body {
   color: black;
   border: 2px solid black;
   transform: translate(-50%, -50%);
+
 }
 .Contenedor h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
 }
-.boton {
+/*Buscar un color para el boton del login*/
+.Contenedor input[type="submit"] {
   position: relative;
   border-radius: 10px;
   font-weight: 400;
   padding: 2px 70px;
   border: 2px solid;
   text-decoration: none;
-  color: black;
+  
 }
-.boton:hover {
-  color: white;
+/*buscar como funcional las animacion en un input*/
+.input[type="submit"]:hover {
   box-shadow: 0 4px 16px rgb(223, 76, 78);
   transition: all 0.2s ease;
 }
@@ -64,19 +68,15 @@ body {
   left: calc(50% - 45px);
 }
 
-.Contenedor input {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
 .Contenedor input[type="text"],
 .Contenedor input[type="password"] {
+  width: 100%;
+  margin-bottom: 20px;
   border: none;
   background: transparent;
   outline: none;
   height: 40px;
   font-size: 14px;
-  color: bla;
   border-bottom: 1px solid black;
 }
 

@@ -21,7 +21,7 @@
 
     <form th:action="@{/login}" method="post" class="Contenedor">
 
-      <div  ><img class="avatar" th:src="@{/images/imgUser}" alt="img_user"></div>
+      <div  ><img class="avatar" th:src="@{/images/imgusuario.png}"alt="img_user"></div>
 
       <div> <h1>Login</h1></div>
      
@@ -33,7 +33,7 @@
       <div>
         <label> Contraseña: <input type="password" name="password" /> </label>
       </div>
-      <div class="boton"><input type="submit" value="Iniciar Sesión" /></div>
+      <div ><input type="submit" value="Iniciar Sesión" /></div>
       <div>
         <p>
           ¿No tienes una cuenta? Registrate <a th:href="@{/registro}">aquí</a>.
