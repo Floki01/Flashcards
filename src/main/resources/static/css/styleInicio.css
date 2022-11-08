@@ -67,7 +67,6 @@ body{
 
 .portada{
     height: 80vh !important;
-    background: url(/src/main/resources/static/img/Flashcards-for-language-learning-blog.jpg) no-repeat center;
     background-size: cover;
 }
 

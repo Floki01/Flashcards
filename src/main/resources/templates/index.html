@@ -16,8 +16,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <div class="encabezado">
 
         <div class="logo">
-            <img th:src="@{/img/playlearn_flashcards_multi_rgb-600x125.png}" alt="logo">
-            <a href=""></a>
+             <img th:src="@{/images/logo.png}" alt="logo">
         </div>
 
         <nav class="linksnav">
@@ -73,14 +72,14 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <div class="box-container">
 
         <div class="box">
-            <i class="img mazo"><img src="/src/main/resources/static/img/imgmazo.png" alt="imagen_de_mazo"></i>
+            <i class="img mazo"><img th:src="@{/images/imgmazo.png}" alt="imagen_de_mazo"></i>
             <h3>Mazo</h3>
             <br>
             <p>labore molestias consectetur veniam</p>
         </div>
         
         <div class="box">  
-            <i class="img tarjeta"><img src="/src/main/resources/static/img/1006772.png" alt="imagen_de_tarjeta"></i>
+            <i class="img tarjeta"><img th:src="@{/images/imgtarjeta.png}" alt="imagen_de_tarjeta"></i>
             <h3>Tarjeta</h3>
             <br>
             <p>labore molestias consectetur veniam</p>
