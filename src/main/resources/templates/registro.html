@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
-    <link rel="stylesheet" href="/src/main/resources/static/css/styleRegistro.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/styleRegistro.css" th:href="@{/css/styleRegistro.css}">
 </head>
 <body>
       <form th:action="@{/registro}" th:object="${usuario}" method="post">
