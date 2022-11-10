@@ -15,4 +15,12 @@ public class TarjetaService{
     public void save(Tarjeta tarjeta){
         tarjetaRepository.save(tarjeta);
     }
+
+    public Tarjeta get(Long id){
+        return tarjetaRepository.findById(id).get();
+    }
+
+    public void delete(Tarjeta tarjeta){
+        tarjetaRepository.delete(tarjeta);;
+    }
 }

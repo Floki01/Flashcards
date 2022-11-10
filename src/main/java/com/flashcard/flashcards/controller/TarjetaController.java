@@ -6,12 +6,16 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.flashcard.flashcards.model.Mazo;
 import com.flashcard.flashcards.model.Tarjeta;
 import com.flashcard.flashcards.service.MazoService;
@@ -50,8 +54,22 @@ public class TarjetaController {
         return "redirect:/index";
     }
 
+    @GetMapping(value = "/editar")
+    public String editarTarjeta(Model model,@RequestParam(value = "tarjeta", required = false) Long tarjetaId,
+        @RequestParam(value = "mazo", required = false) Long mazoId){
 
+        Mazo mazo = mazoService.get(mazoId);
+        Tarjeta tarjeta = tarjetaService.get(tarjetaId);
+        model.addAttribute("mazo",mazo);
+        model.addAttribute("tarjeta",tarjeta);
+        return "editarTarjeta";
+        
+    }
 
-
-    
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminar(Model model, @PathVariable(name = "id") Long id){
+        Tarjeta tarjeta = tarjetaService.get(id);
+        tarjetaService.delete(tarjeta);
+        return "redirect:/index";
+    }
 }

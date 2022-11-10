@@ -27,7 +27,7 @@
                   <div class="fw-bold" th:text="${mazo.descripcion}"></div>
                 </div>
                 <div>
-                  <a th:href="@{/editar/}+${mazo.id}" class="btn btn-primary">editar</a>
+                  <a th:href="@{/editar(tarjeta=${tarjeta.id},mazo=${mazo.id})}" class="btn btn-primary">editar</a>
                   <a th:href="@{/eliminar/}+${mazo.id}" class="btn btn-danger">eliminar</a>
                 </div>
               </li>

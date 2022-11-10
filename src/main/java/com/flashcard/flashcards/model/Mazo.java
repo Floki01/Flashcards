@@ -33,7 +33,7 @@ public class Mazo {
     @Column(name = "descripcion", length = 60)
     private String descripcion;
 
-    @OneToMany(mappedBy = "mazo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "mazo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Tarjeta> tarjetas = new HashSet<>();
 
     public Mazo(){
