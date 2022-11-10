@@ -51,7 +51,7 @@ public class TarjetaController {
     @RequestMapping(value ="/guardarTarjeta",method = RequestMethod.POST)
     public String guardar(@ModelAttribute("tarjeta") Tarjeta tarjeta){
         tarjetaService.save(tarjeta);
-        return "redirect:/index";
+        return "redirect:/mazos";
     }
 
     @GetMapping(value = "/editar")
@@ -70,6 +70,6 @@ public class TarjetaController {
     public String eliminar(Model model, @PathVariable(name = "id") Long id){
         Tarjeta tarjeta = tarjetaService.get(id);
         tarjetaService.delete(tarjeta);
-        return "redirect:/index";
+        return "redirect:/mazos";
     }
 }
