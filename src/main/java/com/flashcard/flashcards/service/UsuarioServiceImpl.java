@@ -15,6 +15,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository data;
+    
     @Override
     public List<Usuario> listar() {
         return (List<Usuario>) data.findAll();

@@ -67,7 +67,7 @@ body{
 
 .portada{
     height: 80vh !important;
-    background-image: url(../images/portada.png) no-repeat center;
+    background: url('../images/flashcards-TGIRzIfs-DzTechs.jpg') no-repeat center center fixed;
    /* background-color: red;    este si funciona*/ 
     background-size: cover;
 }
