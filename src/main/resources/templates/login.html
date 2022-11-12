@@ -6,39 +6,46 @@
 >
   <head>
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="/src/main/resources/static/css/styleLogin.css" th:href="@{/css/styleLogin.css}">
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/styleLogin.css"
+      th:href="@{/css/styleLogin.css}"
+    />
   </head>
   <body>
-    <!--Spring Security proporciona un filtro que intercepta esa solicitud y autentica al usuario.
- Si el usuario no puede autenticarse, la página se redirige a /login?error y su página muestra
- el mensaje de error correspondiente. Al cerrar sesión con éxito, su solicitud se envía
- a /login?logout y su página muestra el mensaje de éxito correspondiente.-->
-
     <div class="Alerta error" th:if="${param.error}">
-      Nombre de usuario y contraseña incorrectos.
-</div>
-    <div class="Alerta cerrar" th:if="${param.logout}">Has cerrado sesión.</div>
+      Nombre de usuario y contraseña incorrectos
+    </div>
 
-    <form th:action="@{/login}" method="post" class="Contenedor">
+    <div class="Alerta cerrar" th:if="${param.logout}">Has cerrado sesión</div>
 
-      <div  ><img class="avatar" th:src="@{/images/imgusuario.png}"alt="img_user"></div>
+    <form th:action="@{/login}" method="post" class="formulario">
 
-      <div> <h1>Login</h1></div>
-     
-      <div>
-        <label>
-          Nombre de Usuario : <input type="text" name="username" />
-        </label>
+      <div><h1>Login</h1></div>
+
+      <div class="contenedor">
+
+        <div class="input contenedor">
+          <i class="fi fi-rr-user icon"></i>
+          <input type="text" name="username" placeholder="Nombre de Usuario:" />
+        </div>
+
+        <div class="input contenedor">
+          <i class="fi fi-rr-key icon"></i>
+          <input type="password" name="password" placeholder="Contraseña">
+        </div>
       </div>
-      <div>
-        <label> Contraseña: <input type="password" name="password" /> </label>
-      </div>
-      <div ><input type="submit" value="Iniciar Sesión" /></div>
-      <div>
-        <p>
-          ¿No tienes una cuenta? Registrate <a th:href="@{/registro}">aquí</a>.
-        </p>
-      </div>
+
+      <input type="submit" value="Iniciar Sesión" class="button"/>
+
+      <p>¿No tienes una cuenta? Registrate <a th:href="@{/registro}">aquí</a>.</p>
+      
+
+      
     </form>
   </body>
 </html>
