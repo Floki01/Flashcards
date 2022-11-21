@@ -61,7 +61,7 @@ public class TarjetaController {
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public String eliminar(Model model, @PathVariable(name = "id") Long id){
+    public String eliminar( @PathVariable(name = "id") Long id){
         Tarjeta tarjeta = tarjetaService.get(id);
         tarjetaService.delete(tarjeta);
         return "redirect:/mazos";

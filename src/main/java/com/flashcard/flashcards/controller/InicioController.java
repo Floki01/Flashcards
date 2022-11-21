@@ -11,7 +11,7 @@ public class InicioController {
         return "/index";
     }
 
-    //para cuando inicia sesion lo lleve directo a mazos(html)
+    
     @GetMapping({"/mazos"})
     public String inicioMazo() {
         return "/mazos";

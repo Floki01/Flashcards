@@ -16,9 +16,7 @@ public class FlashcardsApplication {
 		SpringApplication.run(FlashcardsApplication.class, args);
 	}
 	
-	// Permite ejecutar código con interfaz funcional
-	// Se ejecuta después de que se haya creado el contexto de app y antes de que se ejecute la app principal
-	// Es como un import.sql
+	
 	@Bean
 	CommandLineRunner commandLineRunner(UsuarioRepository usuarios, PasswordEncoder encoder) {
 		return args -> {

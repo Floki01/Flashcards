@@ -40,7 +40,7 @@ public class MazoController {
     }
 
     @RequestMapping("/editar/{id}")
-    public ModelAndView editar(@PathVariable(name = "id") long id,Model model){//usas el parametro model en el metodo?
+    public ModelAndView editar(@PathVariable(name = "id") long id){
         ModelAndView modelAndView = new ModelAndView("editarMazo");
         Mazo mazo = service.get(id);
         modelAndView.addObject("mazo",mazo);
@@ -48,7 +48,7 @@ public class MazoController {
     }
 
     @GetMapping(value = "/eliminar/{id}")
-    public String eliminar(Model model, @PathVariable(name = "id") Long id){//---lo mismo que arriba
+    public String eliminar( @PathVariable(name = "id") Long id){
         service.delete(id);
         return "redirect:/mazos";
     }
