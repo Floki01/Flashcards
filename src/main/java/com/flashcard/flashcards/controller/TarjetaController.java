@@ -1,9 +1,5 @@
 package com.flashcard.flashcards.controller;
 
-import java.util.List;
-import java.util.Set;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,16 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.flashcard.flashcards.model.Mazo;
 import com.flashcard.flashcards.model.Tarjeta;
 import com.flashcard.flashcards.service.MazoService;
 import com.flashcard.flashcards.service.TarjetaService;
 
 @Controller
-@RequestMapping
+@RequestMapping("/")
 public class TarjetaController {
     
     @Autowired
