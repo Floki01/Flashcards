@@ -14,11 +14,11 @@ import com.flashcard.flashcards.service.MazoService;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
 public class MazoController {
     
     @Autowired
     private MazoService service;
+
 
     @RequestMapping("/mazos")
     public String listar(Model model){

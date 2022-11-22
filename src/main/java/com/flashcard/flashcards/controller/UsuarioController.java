@@ -30,6 +30,8 @@ public class UsuarioController {
         return "registro";
     }
 
+   
+
     @PostMapping("/registro")
     public String guardarUsuario(@Valid Usuario usuario, SessionStatus status) {
 
@@ -40,7 +42,7 @@ public class UsuarioController {
 
         usuarioService.guardar(usuario);
         status.setComplete();
-        return "redirect:/mazo";
+        return "redirect:/mazos";
     }
 
 }
