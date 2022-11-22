@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.flashcard.flashcards.model.Mazo;
 import com.flashcard.flashcards.service.MazoService;
 import org.springframework.web.servlet.ModelAndView;
@@ -52,5 +54,17 @@ public class MazoController {
         service.delete(id);
         return "redirect:/mazos";
     }
+
+    @RequestMapping("/verTarjetas")
+    public String verTarjetas(Model model,@RequestParam(value = "index", required = false) int index,
+    @RequestParam(value = "mazoid", required = false) long id){
+
+        Mazo mazo = service.get(id);
+        model.addAttribute("mazo", mazo);
+        model.addAttribute("nTarjeta",index);
+        model.addAttribute("tarjeta",mazo.getTarjetas().get(index));
+        return "verTarjetas";
+    }
+
     
 }
