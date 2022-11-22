@@ -12,11 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import net.bytebuddy.dynamic.TypeResolutionStrategy.Lazy;
 
 @Entity
 @Table(name = "mazo")
@@ -34,7 +31,7 @@ public class Mazo {
     private String descripcion;
 
     @OneToMany(mappedBy = "mazo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Tarjeta> tarjetas = new HashSet<>();
+    private List<Tarjeta> tarjetas = new ArrayList<>();
 
     public Mazo(){
         
@@ -64,11 +61,16 @@ public class Mazo {
         this.descripcion = descripcion;
     }
 
-    public Set<Tarjeta> getTarjetas() {
+    public List<Tarjeta> getTarjetas() {
         return tarjetas;
     }
 
-    public void setTarjetas(Set<Tarjeta> tarjetas) {
+    public void setTarjetas(List<Tarjeta> tarjetas) {
         this.tarjetas = tarjetas;
     }
+
+    public boolean estaVacio(){
+        return this.tarjetas.size()<=0;
+    }
+
 }
