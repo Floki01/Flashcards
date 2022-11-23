@@ -28,7 +28,7 @@ public class SecurityConfig {
                 
                 .authorizeRequests(consulta -> consulta
                        
-                        .mvcMatchers("/", "/index", "/registro", "/js/**", "/css/**","/images/**").permitAll()
+                        .mvcMatchers("/", "/index", "/registro","/mazos","/crear","/guardar","/editar/{id}","/eliminar/{id}","/tarjetas","/crearMazo","/crearTarjeta","/tarjetas/{id}","/crearTarjeta/{id}","/guardarTarjeta","/editar","/eliminar/{id}","/editarMazo","/editarTarjeta", "/js/**", "/css/**","/images/**").permitAll()
                         .anyRequest().authenticated())
                
                 .userDetailsService(jpaUserDetailsService)

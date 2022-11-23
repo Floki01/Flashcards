@@ -18,14 +18,12 @@ body {
 .Alerta{
   display: flex;
   justify-content: center;
-  margin-top: 25px;
-  padding: 25px;
-  border: 2px solid black;
-  
 }
 
 .error{
-  background-color: red;
+  width: 30%;
+  border: solid 2px black;
+
 }
 
 .contenedor {
