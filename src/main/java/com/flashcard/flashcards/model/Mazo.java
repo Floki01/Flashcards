@@ -1,8 +1,7 @@
 package com.flashcard.flashcards.model;
 
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
