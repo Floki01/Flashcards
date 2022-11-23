@@ -17,12 +17,14 @@
     />
   </head>
   <body>
-    <div class="Alerta error" th:if="${param.error}">
+    <div class="Alerta">
+    <div class="error" th:if="${param.error}">
       Nombre de usuario y contraseña incorrectos
     </div>
-
-    <div class="Alerta cerrar" th:if="${param.logout}">Has cerrado sesión</div>
-
+    <div class="cerrar" th:if="${param.logout}">
+      Has cerrado sesión
+    </div>
+  </div>
     <form th:action="@{/login}" method="post" class="formulario">
 
       <div><h1>Login</h1></div>

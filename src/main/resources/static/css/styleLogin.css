@@ -17,12 +17,21 @@ body {
 
 .Alerta{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
 
 .error{
   width: 30%;
-  border: solid 2px black;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(219, 98, 98);
+  border: solid 2px rgb(198, 43, 48);
+  color: rgb(12, 19, 13);
 
 }
 
@@ -69,7 +78,7 @@ input[type="password"] {
 .button {
   width: 100%;
   font-size: 20px;
-  padding: 15px 15px;
+  padding: 12px 12px;
   margin: auto;
   border-radius: 5px;
   border: 1px solid;
