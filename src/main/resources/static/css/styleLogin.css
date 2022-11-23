@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  height: 100%;
+}
+
+body {
+  min-height: 100;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(150deg,#6C3482,#58D68D); /*cambiar colores*/
+
+}
+
+
+.Alerta{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.error{
+  width: 30%;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(219, 98, 98);
+  border: solid 2px rgb(198, 43, 48);
+  color: rgb(12, 19, 13);
+
+}
+
+.contenedor {
+  width: 100%;
+  padding: 20px;
+}
+
+.formulario {
+  background: #fff;
+  margin-top: 50px;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #1a2537;
+  font-size: 40px;
+}
+input[type="text"],
+input[type="password"] {
+  font-size: 20px;
+  width: 82%;
+  padding: 10px;
+  border: none;
+  
+}
+.input-contendor {
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  margin: 30px 0;
+  
+  
+}
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #999;
+  
+}
+
+.button {
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 12px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: #1a2537;
+  
+}
+
+.button:hover {
+  background: cadetblue;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #1a2537;
+  font-weight: 600;
+}
+
+a:hover {
+  color: cadetblue;
+}
+
+@media (min-width: 540px) {
+  .formulario {
+    margin: auto;
+    width: 500px;
+    border-radius: 2%;
+    margin-top: 150px;
+  }
+}

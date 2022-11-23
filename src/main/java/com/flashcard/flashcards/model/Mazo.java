@@ -1,7 +1,9 @@
 package com.flashcard.flashcards.model;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -64,12 +66,5 @@ public class Mazo {
         return tarjetas;
     }
 
-    public void setTarjetas(List<Tarjeta> tarjetas) {
-        this.tarjetas = tarjetas;
-    }
-
-    public boolean estaVacio(){
-        return this.tarjetas.size()<=0;
-    }
 
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="/src/main/resources/static/css/styleRegistro.css" th:href="@{/css/styleRegistro.css}">
+</head>
+<body>
+      <form th:action="@{/registro}" th:object="${usuario}" method="post" class="formulario">
+           
+        <div><h1>Registrate</h1></div>
+
+         <div class="contenedor">
+
+          <div class="input contenedor">
+            <div>
+              <i class="fi fi-rr-user icon"></i>
+              <label for="nombreUsuario">Nombre de Usuario</label>
+              <input th:field="*{nombre}" type="text" id="nombreUsuario"/>
+            </div>
+          </div>
+
+          <div class="input contenedor">
+            <div>
+              <i class="fi fi-rr-key icon"></i>
+              <label for="clave">Contraseña</label>
+              <input th:field="*{clave}" type="password" id="clave" />
+              
+            </div>
+          </div>
+
+          <div>
+            <input type="submit" value="Crear cuenta" class="button"/>
+            <p>¿Ya tienes una cuenta? <a th:href="@{/login}">Inicia sesión aquí.</a></p>
+          </div>
+
+         </div>
+
+        </form>
+
+</body>
+</html>

@@ -16,11 +16,11 @@ import com.flashcard.flashcards.service.MazoService;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
 public class MazoController {
     
     @Autowired
     private MazoService service;
+
 
     @RequestMapping("/mazos")
     public String listar(Model model){
@@ -42,7 +42,7 @@ public class MazoController {
     }
 
     @RequestMapping("/editar/{id}")
-    public ModelAndView editar(@PathVariable(name = "id") long id,Model model){
+    public ModelAndView editar(@PathVariable(name = "id") long id){
         ModelAndView modelAndView = new ModelAndView("editarMazo");
         Mazo mazo = service.get(id);
         modelAndView.addObject("mazo",mazo);
@@ -50,7 +50,7 @@ public class MazoController {
     }
 
     @GetMapping(value = "/eliminar/{id}")
-    public String eliminar(Model model, @PathVariable(name = "id") Long id){
+    public String eliminar( @PathVariable(name = "id") Long id){
         service.delete(id);
         return "redirect:/mazos";
     }
