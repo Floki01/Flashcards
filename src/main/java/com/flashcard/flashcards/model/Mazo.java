@@ -1,7 +1,9 @@
 package com.flashcard.flashcards.model;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +33,7 @@ public class Mazo {
     private String descripcion;
 
     @OneToMany(mappedBy = "mazo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Tarjeta> tarjetas = new HashSet<>();
+    private List<Tarjeta> tarjetas = new ArrayList<>();
 
     public Mazo(){
         
@@ -61,11 +63,8 @@ public class Mazo {
         this.descripcion = descripcion;
     }
 
-    public Set<Tarjeta> getTarjetas() {
+    public List<Tarjeta> getTarjetas() {
         return tarjetas;
     }
 
-    public void setTarjetas(Set<Tarjeta> tarjetas) {
-        this.tarjetas = tarjetas;
-    }
 }
