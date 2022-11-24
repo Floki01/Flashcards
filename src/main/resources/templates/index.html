@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="https://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/src/main/resources/static/css/styleIndex.css" th:href="@{/css/styleIndex.css}">
+    <title>Pagina de Inicio</title>
+</head>
+<body>
+    
+
+    <div class="encabezado">
+
+        <div class="logo">
+             <img th:src="@{/images/logo.png}" alt="logo">
+        </div>
+
+        <nav class="linksnav">
+            <a th:href="@{/mazos}">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#mazos">Mazos</a>
+            <a th:href="@{/login}">Login</a> 
+            <a th:href="@{/registro}">Regristro</a>
+
+    </div>
+<a name="inicio" id="inicio"></a>
+
+<header class="content portada">
+    
+    <h2 class="title">Flashcard</h2>
+     
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+         Ipsam necessitatibus odio quisquam reprehenderit quas, 
+         obcaecati, harum hic molestiae sequi ipsa nihil id tempore explicabo 
+        libero vero quia asperiores similique dicta.
+    </p>
+
+    <div class="btn-home">
+        <a th:href="@{/login}" class="btn">Saber mas</a>
+        
+    </div>
+</header>
+<a href="nosotros" id="nosotros"></a>
+<section class="content nosotros">
+   
+    <h2 class="title">Nosotros</h2>
+   <br>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+        elit. Veritatis excepturi dolore, harum asperiores 
+        cupiditate officiis quia odit reiciendis quidem iure 
+        architecto laudantium 
+        nihil saepe pariatur vel labore molestias consectetur veniam?</p>
+    </div>
+
+</section>
+<a href="mazos"id="mazos"></a>
+<section class="content mazos">
+
+    <h2 class="title">Mazos - Tarjetas</h2>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Ut soluta similique 
+        quia reprehenderit eligendi aliquam. Sit 
+        odio impedit quibusdam. Velit corporis, 
+        optio debitis quidem ex ipsam rerum dolorem autem sequi.
+    </p>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="img mazo"><img th:src="@{/images/imgmazo.png}" alt="imagen_de_mazo"></i>
+            <h3>Mazo</h3>
+            <br>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+        
+        <div class="box">  
+            <i class="img tarjeta"><img th:src="@{/images/imgtarjeta.png}" alt="imagen_de_tarjeta"></i>
+            <h3>Tarjeta</h3>
+            <br>
+            <p>labore molestias consectetur veniam</p>
+        </div>
+</div>
+
+    <a th:href="@{/login}" class="btn">Saber mas</a>
+
+</section>
+
+
+
+
+</body>
+</html>
