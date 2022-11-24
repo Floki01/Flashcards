@@ -12,11 +12,4 @@ public class InicioController {
     public String inicio() {
         return "/index";
     }
-
-    
-    @GetMapping({"/mazos"})
-    public String inicioMazo() {
-        return "/mazos";
-    }
-
 }
