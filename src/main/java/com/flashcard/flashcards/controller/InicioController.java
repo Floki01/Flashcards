@@ -14,9 +14,6 @@ public class InicioController {
     }
 
     
-    @GetMapping({"/mazos"})
-    public String inicioMazo() {
-        return "/mazos";
-    }
+   
 
 }
